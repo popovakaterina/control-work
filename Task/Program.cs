@@ -17,7 +17,7 @@ int position = 0;
 
 for (int j = 0; j < mass_size; j++)
 {
-    if (mass[j].Length <= 3)
+    if (mass[j].Length <= 3)// выбор элементов, длина которых меньше или равна 3
     {
         new_mass[position]= mass[j];
         position++;
@@ -27,12 +27,11 @@ for (int j = 0; j < mass_size; j++)
 
 void PrintArray(string[] array) // Вывод (печать) массива
 {
-    Console.Write("[ ");
     for (int i = 0; i < array.Length; i++)
     {
         Console.Write(array[i] + " ");
     }
-    Console.Write("]");
+  
     Console.WriteLine();
 }
 
