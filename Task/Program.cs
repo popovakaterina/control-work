@@ -1,21 +1,23 @@
 ﻿// Написать программу, которая из имеющегося массива строк формирует новый массив из строк, длина которых меньше, 
 // либо равна 3 символам.
 // Первоначальный массив можно ввести с клавиатуры, либо задать на старте выполнения алгоритма. 
+Console.Clear(); 
 Console.Write("Введите размер массива: ");
-int mas_size = Convert.ToInt32(Console.ReadLine());
-string [] mass = new string [mas_size];
-for (int i = 0; i < mas_size; i++) // Заполнение массива с клавиатуры
+int mass_size = Convert.ToInt32(Console.ReadLine());
+string [] mass = new string [mass_size];
+for (int i = 0; i < mass_size; i++) // Заполнение массива с клавиатуры
 {
     Console.Write("Введите "+ (i+1) + " элемент масиива: ");
     string element = Convert.ToString(Console.ReadLine());
     mass[i] = element;
 }
-string [] new_mass = new string [3]; // массив для финального решения
+
+string [] new_mass = new string [mass_size]; // массив для финального решения
 int position = 0;
 
-for (int j = 0; j < new_mass.Length; j++)
+for (int j = 0; j < mass_size; j++)
 {
-    if (mass[j].Length <= new_mass.Length)
+    if (mass[j].Length <= 3)
     {
         new_mass[position]= mass[j];
         position++;
@@ -25,10 +27,12 @@ for (int j = 0; j < new_mass.Length; j++)
 
 void PrintArray(string[] array) // Вывод (печать) массива
 {
+    Console.Write("[ ");
     for (int i = 0; i < array.Length; i++)
     {
         Console.Write(array[i] + " ");
     }
+    Console.Write("]");
     Console.WriteLine();
 }
 
