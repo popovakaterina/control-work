@@ -4,13 +4,26 @@
 Console.Write("Введите размер массива: ");
 int mas_size = Convert.ToInt32(Console.ReadLine());
 string [] mass = new string [mas_size];
-for (int i = 0; i < mas_size; i++)
+for (int i = 0; i < mas_size; i++) // Заполнение массива с клавиатуры
 {
     Console.Write("Введите "+ (i+1) + " элемент масиива: ");
     string element = Convert.ToString(Console.ReadLine());
     mass[i] = element;
 }
-void PrintArray(string[] array)
+string [] new_mass = new string [3]; // массив для финального решения
+int position = 0;
+
+for (int j = 0; j < new_mass.Length; j++)
+{
+    if (mass[j].Length <= new_mass.Length)
+    {
+        new_mass[position]= mass[j];
+        position++;
+    }
+}
+
+
+void PrintArray(string[] array) // Вывод (печать) массива
 {
     for (int i = 0; i < array.Length; i++)
     {
@@ -18,4 +31,9 @@ void PrintArray(string[] array)
     }
     Console.WriteLine();
 }
+
+
+Console.Write("Исходный массив: ");
 PrintArray(mass);
+Console.Write("Финальный массив: ");
+PrintArray(new_mass);
